@@ -1,18 +1,15 @@
-function appendToResult(value) {
-    document.getElementById('result').value += value;
+function appendValue(value) {
+  document.getElementById('result').value += value;
+}
+
+function calculate() {
+  try {
+    document.getElementById('result').value = eval(document.getElementById('result').value);
+  } catch (error) {
+    document.getElementById('result').value = 'Грешка';
+  }
 }
 
 function clearResult() {
-    document.getElementById('result').value = '';
-}
-
-function deleteCharacter() {
-    var result = document.getElementById('result').value;
-    document.getElementById('result').value = result.slice(0,-1);
-}
-
-function calculateResult() {
-    var result = document.getElementById('result').value;
-    var calculation = eval(result);
-    document.getElementById('result').value = calculation;
+  document.getElementById('result').value = '';
 }
